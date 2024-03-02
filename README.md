@@ -1,4 +1,5 @@
-![webScraperLogo](https://github.com/operator-axel/web-scraper-go/assets/77085081/8b92c3de-3b90-4e98-b38e-a29b0a21ddd8)
+![webScraperLogo](https://github.com/operator-axel/web-scraper-go/assets/77085081/0a19cac1-6488-44eb-a92f-6438f3cc8fcd)
+
 A web scraper built in Go, that asks for user input, domain, subdomain(optional), and the URL/link to scrape. 
 The allowed domain input helps to keep the scraper contained to the specific content you want. 
 
