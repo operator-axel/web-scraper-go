@@ -8,7 +8,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/briandowns/spinner"
 	"github.com/gocolly/colly"
+	"time"
 )
 
 func main() {
@@ -41,6 +43,9 @@ func main() {
 	}
 	defer file.Close()
 
+	s := spinner.New(spinner.CharSets[21], 100*time.Millisecond)
+	s.Start()
+
 	c := colly.NewCollector(
 		colly.AllowedDomains(parsedURL.Hostname()),
 	)
@@ -62,6 +67,6 @@ func main() {
 		log.Fatalf("Failed to visit site: %s\n", err)
 		return
 	}
-
+	s.Stop()
 	log.Printf("Scraping finished, check file %q for results\n", filePath)
 }
