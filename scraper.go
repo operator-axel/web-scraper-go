@@ -35,7 +35,8 @@ func main() {
 	fmt.Print("What should the name of the file be? ")
 	fileName, _ := reader.ReadString('\n')
 	fileName = strings.TrimSpace(fileName)
-	filePath := fmt.Sprintf("/home/ch40s/Obsidian/dolos/%s.md", fileName)
+	fileName = url.QueryEscape(fileName)
+	filePath := fmt.Sprintf("/home/ch40s/Documents/Obsidian/lelantos/%s.md", fileName)
 	file, err := os.Create(filePath)
 	if err != nil {
 		log.Fatalf("Cannot create file %q: %s\n", filePath, err)
